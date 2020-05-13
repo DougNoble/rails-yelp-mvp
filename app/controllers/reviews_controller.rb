@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   def new
     # we need @restaurant in our `simple_form_for`
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -12,7 +11,7 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review.restaurant = @restaurant
     if @review.save
-    redirect_to restaurant_path(@restaurant)
+      redirect_to restaurant_path(@restaurant)
     else
       render :new
     end
